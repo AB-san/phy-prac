@@ -3,24 +3,45 @@
 <body>
 
 <h2>Density</h2>
-<input type="number" id="density" value="0" class="form__field" oninput="convertbcd()"><br>
+<input type="number" id="density" value="0" class="form__field" oninput="check()"><br>
 
 <h2>Melting Point</h2>
-<input type="number" id="mp" value="0" class="form__field" oninput="convertbcd()"><br>
+<input type="number" id="mp" value="0" class="form__field" oninput="check()"><br>
 
 <h2>Colour Of Element</h2>
-<select id="colour" class="form__field" onchange="convertbcd()">
-<option class="form__field">Yellow</option>
+<select id="colour" class="form__field" onchange="check()">
+<option class="form__field"> </option>
 <option class="form__field">Silver</option>
 </select><br>
 
 <h2>Hardness</h2>
-<input type="number" id="hardness" value="0" class="form__field" oninput="convertbcd()"><br>
+<input type="number" id="hardness" value="0" class="form__field" oninput="check()"><br><br><br><br>
 
-
+<h2>Result</h2>
 <label class="form__group" id="result"></label>
 
-<script src="index.js"></script>
+<script>
+
+function check() {
+    var density = document.getElementById("density").value;
+    var mp = document.getElementById("mp").value;
+    var colour = document.getElementById("colour").value;
+    var hardness = document.getElementById("hardness").value;
+    let result = document.getElementById("result");
+
+    var name = "";
+    var type = "";
+    var atm_no = "";
+
+
+    if (density =="10.49" || mp=="961.8" || colour === "Silver" || hardness == 2.5){
+    name= "SILVER";
+    type= "METAL";
+    atm_no="47";
+    }
+    result.innerHTML = "Material Name ="+name+"<br> Material Category ="+type+"<br>Atomic No. ="+atm_no;
+}
+</script>
 
 
 </body>
