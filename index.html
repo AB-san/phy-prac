@@ -12,6 +12,8 @@
 <select id="colour" class="form__field" onchange="check()">
 <option class="form__field"> </option>
 <option class="form__field">Silver</option>
+<option class="form__field">Silvery White</option>
+<option class="form__field">Black</option>
 </select><br>
 
 <h2>Hardness</h2>
@@ -34,10 +36,22 @@ function check() {
     var atm_no = "";
 
 
-    if (density =="10.49" || mp=="961.8" || colour === "Silver" || hardness == 2.5){
+    if (density =="10" && mp=="961" && colour === "Silver" && hardness == 2.5){
     name= "SILVER";
     type= "METAL";
     atm_no="47";
+    }else if (density =="3" && mp=="660" && colour === "Silvery White" && hardness == 3){
+    name= "ALUMINIUM";
+    type= "METAL";
+    atm_no="13";
+    }else if (density =="8" && mp=="1538" && colour === "Black" && hardness == 5){
+    name= "IRON";
+    type= "METAL";
+    atm_no="26";
+    }else if (density =="2" && mp=="3600" && colour === "Black" && hardness == 1){
+    name= "GRAPHITE";
+    type= "NON METAL";
+    atm_no="6";
     }
     result.innerHTML = "Material Name ="+name+"<br> Material Category ="+type+"<br>Atomic No. ="+atm_no;
 }
